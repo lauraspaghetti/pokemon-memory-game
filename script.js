@@ -79,7 +79,6 @@ document.addEventListener('DOMContentLoaded', () => {
             //All the images will be put into the .grid div, using appendChild()
             // https://developer.mozilla.org/fr/docs/Web/API/Node/appendChild
             grid.appendChild(card); 
-
         }
 
     }
@@ -146,8 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(checkForMatch, 500); 
         }
 
-
-    }
+    }; 
 
     createBoard();
     
