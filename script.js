@@ -6,11 +6,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         {
             name : 'pikachu',
-            img : 'assets/img/pikachu100.png'
+            img : 'assets/img/pikachu100.jpg'
         }, 
         {
             name : 'pikachu',
-            img : 'assets/img/pikachu100.png'
+            img : 'assets/img/pikachu100.jpg'
         }, 
         {
             name : 'bulbizarre',
@@ -22,27 +22,27 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 
         {
             name : 'aquali',
-            img : 'assets/img/aquali100.png'
+            img : 'assets/img/aquali100.jpg'
         }, 
         {
             name : 'aquali',
-            img : 'assets/img/aquali100.png'
+            img : 'assets/img/aquali100.jpg'
         }, 
         {
             name : 'evoli',
-            img : 'assets/img/evoli100.png'
+            img : 'assets/img/evoli100.jpg'
         }, 
         {
             name : 'evoli',
-            img : 'assets/img/evoli100.png'
+            img : 'assets/img/evoli100.jpg'
         }, 
         {
             name : 'pyroli',
-            img : 'assets/img/pyroli100.png'
+            img : 'assets/img/pyroli100.jpg'
         }, 
         {
             name : 'pyroli',
-            img : 'assets/img/pyroli100.png'
+            img : 'assets/img/pyroli100.jpg'
         }, 
         {
             name : 'leviator',
@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         for (let i=0; i < cardArray.length; i++){
             var card = document.createElement('img');
-            card.setAttribute('src', 'assets/img/honorball100.png');
+            card.setAttribute('src', 'assets/img/hautes-herbes-3-crop.jpg');
             card.setAttribute('data-id', i);
             card.addEventListener('click', flipCard); 
             //All the images will be put into the .grid div, using appendChild()
@@ -93,11 +93,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const optionTwoId= cardsChosenId[1]; 
         //Then if the first item chosen deeply equals the second one (rather by their names than their id, that's why you use cardsChosen)
         if (cardsChosen[0] === cardsChosen[1]){
-            //An alert pops up 
-            alert("You found a match !"); 
             //And a white square it assigned to them to clear the cardboard 
-            cards[optionOneId].setAttribute('src', 'assets/img/whitesquare100.png');
-            cards[optionTwoId].setAttribute('src', 'assets/img/whitesquare100.png');
+            cards[optionOneId].setAttribute('src', 'assets/img/tall-grass-pokeball.jpg');
+            cards[optionTwoId].setAttribute('src', 'assets/img/tall-grass-pokeball.jpg');
             //Both of the cards are then sent to the cardsWon array to stock all the cards the user has won 
             cardsWon.push(cardsChosen); 
 
@@ -105,9 +103,8 @@ document.addEventListener('DOMContentLoaded', () => {
         //if the cards don't match, they are flipped back over to be played again 
         else{
 
-            cards[optionOneId].setAttribute('src', 'assets/img/honorball100.png');
-            cards[optionTwoId].setAttribute('src', 'assets/img/honorball100.png');
-            alert("Sorry, try again !");  
+            cards[optionOneId].setAttribute('src', 'assets/img/hautes-herbes-3-crop.jpg');
+            cards[optionTwoId].setAttribute('src', 'assets/img/hautes-herbes-3-crop.jpg');
         }
         //Either if they two things happen, you still want to clear the chosen array and the chosenId array, the user is now ready to flip out the cards again 
         cardsChosen= []; 
