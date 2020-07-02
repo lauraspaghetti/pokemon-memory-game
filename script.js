@@ -75,38 +75,41 @@ document.addEventListener('DOMContentLoaded', () => {
             var card = document.createElement('img');
             card.setAttribute('src', 'assets/img/hautes-herbes-3-crop.jpg');
             card.setAttribute('data-id', i);
+            card.classList.add('cards'); 
             card.addEventListener('click', flipCard); 
+            // console.log(card); 
             //All the images will be put into the .grid div, using appendChild()
             // https://developer.mozilla.org/fr/docs/Web/API/Node/appendChild
             grid.appendChild(card); 
         }
-
     }
+
 
     //Check for matches
     function checkForMatch(){
         //let's put all your cards in that function to be able to check them all
-        var cards= document.querySelectorAll('img'); 
+        var cards= document.querySelectorAll('img.cards'); 
         //let's take the first line of your cardsChosenId array and make it the first card the user picks up
         const optionOneId= cardsChosenId[0]; 
         //Same but for the second card they pick up
         const optionTwoId= cardsChosenId[1]; 
         //Then if the first item chosen deeply equals the second one (rather by their names than their id, that's why you use cardsChosen)
         if (cardsChosen[0] === cardsChosen[1]){
-            //And a white square it assigned to them to clear the cardboard 
+            //And a pokeball is assigned to them, meaning the pokemon is catched when the match is found
             cards[optionOneId].setAttribute('src', 'assets/img/tall-grass-pokeball.jpg');
             cards[optionTwoId].setAttribute('src', 'assets/img/tall-grass-pokeball.jpg');
+            //Then the event flipCard is removed to prevent the user to play them again, not allowing them to trick they score
+            cards[optionOneId].removeEventListener('click', flipCard); 
+            cards[optionTwoId].removeEventListener('click', flipCard); 
             //Both of the cards are then sent to the cardsWon array to stock all the cards the user has won 
             cardsWon.push(cardsChosen); 
-
         }
         //if the cards don't match, they are flipped back over to be played again 
         else{
-
             cards[optionOneId].setAttribute('src', 'assets/img/hautes-herbes-3-crop.jpg');
             cards[optionTwoId].setAttribute('src', 'assets/img/hautes-herbes-3-crop.jpg');
         }
-        //Either if they two things happen, you still want to clear the chosen array and the chosenId array, the user is now ready to flip out the cards again 
+        //Either if these two things happen, you still want to clear the chosen array and the chosenId array, the user is now ready to flip out the cards again 
         cardsChosen= []; 
         cardsChosenId= []; 
 
@@ -122,9 +125,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     //Flip your cards
     function flipCard(){
-        //check if the event is working
+        //checking if the event is working
         console.log('the user clicked on a card'); 
         //get the id of your cards
+        //"The getAttribute() method of the Element interface returns the value of a specified attribute on the element." source : https://developer.mozilla.org/en-US/docs/Web/API/Element/getAttribute 
         var cardId= this.getAttribute('data-id'); 
         //put it in an array to gather the cards the user has picked up, ordered by their names
         cardsChosen.push(cardArray[cardId].name); 
@@ -136,10 +140,10 @@ document.addEventListener('DOMContentLoaded', () => {
         this.setAttribute('src', cardArray[cardId].img); 
         //you only want to put 2 cards in your chosenCards array : 
         if (cardsChosen.length === 2){
-            //so every time the user pick up 2 cards, it will set up the function who checks the match
-            console.log('the user choosed two cards'); 
+            //so every time the user pick up 2 cards, it will set up the function which checks the match
+            console.log('the has choosen two cards'); 
             //setTimeOut will make the checking not happen too quickly, it will call the function after 500 milliseconds
-            setTimeout(checkForMatch, 500); 
+            setTimeout(checkForMatch, 200); 
         }
 
     }; 
