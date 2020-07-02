@@ -3,9 +3,9 @@
 - 🚀  in progress
 - ✅  done  
 
-## Cleaning  
+## UX  
 
-1. Use innerHTML instead of document.write to alert the user anytime he finds a match  
+1. Add a btn start again to refresh the page once the user has won 🚀
 
 ## Upgrading
 
@@ -13,6 +13,6 @@
 
 ## Style  
 
-1. Add a container  
-2. Create a Pokemon wild area style when the cards are down  
-3. Put Pokemon cards in a Pokeball when they are won  
+1. Add a container ✅
+2. Create a Pokemon wild area style when the cards are down ✅  
+3. Put Pokemon cards in a Pokeball when they are won ✅
