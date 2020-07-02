@@ -7,7 +7,7 @@ body{
     background-image        : url("../img/pokemon-forest.jpg");
     background-repeat       : no-repeat;
     background-size         : cover;
-    background-position     : 25% 28%;
+    /* background-position     : 25% 10%; */
 }
 
 .grid{
@@ -34,7 +34,31 @@ body{
 ******************* TYPOS *******************
 *********************************************/
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Russo+One&display=swap');
+
+/*
+    font-family: 'Roboto Condensed', sans-serif;
+    font-family: 'Russo One', sans-serif;
+*/
+
+h1{
+    font-family: 'Russo One', sans-serif;
+}
+
+h2, h3, h4, p{
+    font-family: 'Roboto Condensed', sans-serif;
+
+}
+
 /********************************************
 ******************* HEADER ******************
 *********************************************/
+header{
+    color: white;
+}
+
+header img{
+    width: 40%;
+    margin-top: 100px;
+}
 
