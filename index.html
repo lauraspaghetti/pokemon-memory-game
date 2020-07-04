@@ -5,21 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Pokemon memory game</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/normalize.css">
     <link rel="stylesheet" href="assets/css/pokemon.css">
     <script src="script.js"></script>
 </head>
-<body class="container">
-    <header>
-        <img src="assets/img/pokemon-logo.png" alt="Pokemon logo">
-        <h1>Pokemon memory game</h1>
-    </header>
-    <main class="container-sm">
-        <h3>Score:<span id="result"></span></h3>
-        <div class="grid"></div>
-    </main>
+<body>
+    <div class="container">
+        <header>
+            <img src="assets/img/pokemon-logo.png" alt="Pokemon logo">
+            <div>
+                <img src="assets/img/pokeball-gif.webp">
+                <h1>Pokemon memory game</h1>
+                <img src="assets/img/pokeball-gif.webp">
+            </div>
+        </header>
+        <main>
+            <h2 id="message">Click anywhere on the tall grass and a wild pokemon will spawn !</h2>
+            <div class="container-sm">
+                <h3>Score : <span id="result"></span></h3>
+                <div class="grid-container">
+                    <div class="grid">
+                </div>
+                </div>
+                    <button class="hidden">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        Start again
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div><!-- /.container -->
     <footer>
-        <h3>Powered by lauraspaghetti</h3>
+        <div class="container-sm">
+            <h3>Powered by lauraspaghetti</h3>
+        </div>
     </footer>
 </body>
 </html>
