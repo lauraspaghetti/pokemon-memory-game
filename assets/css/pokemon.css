@@ -3,19 +3,21 @@
 ************* GENERAL SETTINGS **************
 *********************************************/
 
+
 body{
     background-image        : url("../img/pokemon-forest.jpg");
     background-repeat       : no-repeat;
     background-size         : cover;
-    /* background-position     : 25% 10%; */
+    background-attachment   : fixed;
+    background-position     : 10% 9%;
+    font-size               : 15px;
 }
 
-.grid{
-    display                 : flex;
-    justify-content         : center;
-    flex-wrap               : wrap;
-    height                  : 300px;
-    width                   : 400px;
+.container{
+    max-width               : 800px;
+    margin                  : auto;
+    text-align              : center;
+    margin-bottom           : 100px;
 }
 
 .container-sm{
@@ -24,41 +26,194 @@ body{
     text-align              : center;
 }
 
-.container{
-    max-width               : 800px;
-    margin                  : auto;
-    text-align              : center;
+.hidden{
+    display                 : none;
 }
 
 /********************************************
 ******************* TYPOS *******************
 *********************************************/
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Russo+One&display=swap');
-
 /*
-    font-family: 'Roboto Condensed', sans-serif;
-    font-family: 'Russo One', sans-serif;
+    font-family             : 'Roboto Condensed', sans-serif;
+    font-family             : 'Bangers', cursive;
 */
 
 h1{
-    font-family: 'Russo One', sans-serif;
+    font-family             : 'Bangers', cursive;
+   
 }
 
-h2, h3, h4, p{
-    font-family: 'Roboto Condensed', sans-serif;
+h2, h3, h4, p, button{
+    font-family             : 'Roboto Condensed';
+    letter-spacing          : 0.5px;
 
 }
 
 /********************************************
 ******************* HEADER ******************
 *********************************************/
+
 header{
-    color: white;
+    margin-bottom           : 30px;
 }
 
-header img{
-    width: 40%;
-    margin-top: 100px;
+h1{
+    letter-spacing          : 2px;
+}
+
+header > img{
+    width                   : 30%;
+    margin-top              : 40px;
+}
+
+header div:first-of-type{
+    display                 : flex;
+    justify-content         : center;
+    align-items             : center;
+    
+}
+
+header div:first-of-type img{
+    width                   : 25px;
+    height                  : 25px;
+}
+
+header div:first-of-type img:first-of-type{
+   margin-right             : 5px;
+}
+
+header div:first-of-type img:nth-of-type(2){
+    margin-left             : 5px;
+}
+
+/********************************************
+******************** MAIN *******************
+*********************************************/
+
+.grid{
+    display                 : flex;
+    justify-content         : center;
+    flex-wrap               : wrap;
+    height                  : 300px;
+    width                   : 400px;
+    margin-bottom           : 20px;
+}
+
+button{
+    background              : transparent;
+    border                  : none;
+    padding                 : 24px 30px;
+    margin                  : 20px 0 0 0;
+    color                   : #ffcb00;
+    text-transform          : uppercase;
+    font-weight             : bold;
+    letter-spacing          : 2px;
+    position                : relative;
+    transition              : 0.5s;
+    overflow                : hidden;
+}
+
+button:hover{
+    background              : #ffcb00;
+    color                   : #050801;
+}
+
+button span{
+    position                : absolute;
+    display                 : block;
+}
+
+button span:nth-of-type(1){
+    top                     : 0;
+    left                    : 0;
+    width                   : 100%;
+    height                  : 2px;
+    background              : linear-gradient(90deg, transparent, #ffcb00);
+    animation               : animationOne 1s linear infinite;
+}
+
+@keyframes animationOne{
+    0% {
+        left                : -100%
+    }
+
+    50%, 100%{
+        left                : 100%;
+    }
+}
+
+button span:nth-of-type(2){
+    top                     : -100%;
+    right                   : 0;
+    width                   : 2px;
+    height                  : 100%;
+    background              : linear-gradient(180deg, transparent, #ffcb00);
+    animation               : animationTwo 1s linear infinite;
+    animation-delay         : 0.25s;
+}
+
+@keyframes animationTwo{
+    0% {
+        top                 : -100%
+    }
+
+    50%, 100%{
+        top                 : 100%;
+    }
+}
+
+button span:nth-of-type(3){
+    bottom                  : 0;
+    right                   : 0;
+    width                   : 100%;
+    height                  : 2px;
+    background              : linear-gradient(270deg, transparent, #ffcb00);
+    animation               : animationThree 1s linear infinite;
+    animation-delay         : 0.50s;
+}
+
+@keyframes animationThree{
+    0% {
+        right               : -100%
+    }
+
+    50%, 100%{
+        right               : 100%;
+    }
+}
+
+button span:nth-of-type(4){
+    bottom                  : -100%;
+    left                    : 0;
+    width                   : 2px;
+    height                  : 100%;
+    background              : linear-gradient(360deg, transparent, #ffcb00);
+    animation               : animationFour 1s linear infinite;
+    animation-delay         : 0.75s;
+}
+
+@keyframes animationFour{
+    0% {
+        bottom              : -100%
+    }
+
+    50%, 100%{
+        bottom              : 100%;
+    }
+}
+
+/********************************************
+****************** FOOTER *******************
+*********************************************/
+
+footer{
+    background              : rgb(31, 31, 31);
+    color                   : white;
+    padding                 : 1px 0 1px 0;  
+    position                : fixed;
+    bottom                  : 0;
+    width                   : 100%;
+    height                  : 55px;
 }
 
