@@ -217,3 +217,84 @@ footer{
     height                  : 55px;
 }
 
+/********************************************
+*************** MEDIA QUERIES ***************
+*********************************************/
+
+
+/* For mobile phones (except iPhone 5/5SE) : */
+@media only screen and (max-width: 768px) {
+
+    /********************************************
+    ************* GENERAL SETTINGS **************
+    *********************************************/      
+
+    .container{
+        max-width               : 350px;
+        margin                  : auto;
+        text-align              : center;
+        margin-bottom           : 100px;
+    }
+
+    .container-sm{
+        max-width               : 300px;
+        margin                  : auto;
+        text-align              : center;
+    }
+
+    /********************************************
+    ******************* HEADER ******************
+    *********************************************/    
+
+    header div:first-of-type img{
+        display                  : none;
+    }
+
+    /********************************************
+    ********************* MAIN ******************
+    *********************************************/   
+
+    .grid{
+        display                 : flex;
+        justify-content         : center;
+        flex-wrap               : wrap;
+        height                  : 100%;
+        width                   : 100%;
+        margin-bottom           : 20px;
+    }
+
+    .grid img{
+        width                   : 70px;
+        height                  : 70px;
+    }
+}
+
+/* For iPhone 5/5SE : */
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px){
+
+    /********************************************
+    ******************* HEADER ******************
+    *********************************************/ 
+
+    header div:first-of-type img{
+       display                  : none;
+    }
+
+    header{
+        margin                   : 0; 
+    }
+
+    header h1{
+        font-size                : 19px;
+    }
+
+    /********************************************
+    ********************* MAIN ******************
+    *********************************************/ 
+
+    main h2{
+        margin-top                 : 10px; 
+        font-size                  : 18px;
+    }
+
+}
