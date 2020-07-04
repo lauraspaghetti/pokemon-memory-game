@@ -5,75 +5,81 @@ document.addEventListener('DOMContentLoaded', () => {
     const cardArray = [
 
         {
-            name : 'pikachu',
-            img : 'assets/img/pikachu100.jpg'
+            name    : 'pikachu',
+            img     : 'assets/img/pikachu100.jpg'
         }, 
         {
-            name : 'pikachu',
-            img : 'assets/img/pikachu100.jpg'
+            name    : 'pikachu',
+            img     : 'assets/img/pikachu100.jpg'
         }, 
         {
-            name : 'bulbizarre',
-            img : 'assets/img/bulbizarre100.jpg'
+            name    : 'bulbizarre',
+            img     : 'assets/img/bulbizarre100.jpg'
         }, 
         {
-            name : 'bulbizarre',
-            img : 'assets/img/bulbizarre100.jpg'
+            name    : 'bulbizarre',
+            img     : 'assets/img/bulbizarre100.jpg'
         }, 
         {
-            name : 'aquali',
-            img : 'assets/img/aquali100.jpg'
+            name    : 'aquali',
+            img     : 'assets/img/aquali100.jpg'
         }, 
         {
-            name : 'aquali',
-            img : 'assets/img/aquali100.jpg'
+            name    : 'aquali',
+            img     : 'assets/img/aquali100.jpg'
         }, 
         {
-            name : 'evoli',
-            img : 'assets/img/evoli100.jpg'
+            name    : 'evoli',
+            img     : 'assets/img/evoli100.jpg'
         }, 
         {
-            name : 'evoli',
-            img : 'assets/img/evoli100.jpg'
+            name    : 'evoli',
+            img     : 'assets/img/evoli100.jpg'
         }, 
         {
-            name : 'pyroli',
-            img : 'assets/img/pyroli100.jpg'
+            name    : 'pyroli',
+            img     : 'assets/img/pyroli100.jpg'
         }, 
         {
-            name : 'pyroli',
-            img : 'assets/img/pyroli100.jpg'
+            name    : 'pyroli',
+            img     : 'assets/img/pyroli100.jpg'
         }, 
         {
-            name : 'leviator',
-            img : 'assets/img/leviator100.jpg'
+            name    : 'leviator',
+            img     : 'assets/img/leviator100.jpg'
         }, 
         {
-            name : 'leviator',
-            img : 'assets/img/leviator100.jpg'
+            name    : 'leviator',
+            img     : 'assets/img/leviator100.jpg'
         }, 
     ]
 
+    //Html elements
+    const gridContainer     = document.querySelector('.grid-container'); 
+    const grid              = document.querySelector('.grid'); 
+    const resultDisplay     = document.querySelector('#result'); 
+    const message           = document.querySelector('#message'); 
+    const startAgainBtn     = document.querySelector('button');
+    
+    //Arrays
+    var cardsChosen        = []; 
+    var cardsChosenId      = []; 
+    var cardsWon           = []; 
+
+    
     //You refresh the game by randomly placing the cards again on the cardboard
     cardArray.sort(()=> 0.5 - Math.random()); 
-
-
-    //Html elements
-    const grid = document.querySelector('.grid'); 
-    const resultDisplay= document.querySelector('#result'); 
-    //Arrays
-    var cardsChosen= []; 
-    var cardsChosenId= []; 
-    var cardsWon= []; 
-
-
-
+    //The user will be abble to refresh the game once they've won 
+    startAgainBtn.addEventListener('click', function(){
+        window.location.reload();
+    });
+    
     //Create your board
     function createBoard(){
 
         for (let i=0; i < cardArray.length; i++){
             var card = document.createElement('img');
-            card.setAttribute('src', 'assets/img/hautes-herbes-3-crop.jpg');
+            card.setAttribute('src', 'assets/img/tall-grass.jpg');
             card.setAttribute('data-id', i);
             card.classList.add('cards'); 
             card.addEventListener('click', flipCard); 
@@ -83,7 +89,6 @@ document.addEventListener('DOMContentLoaded', () => {
             grid.appendChild(card); 
         }
     }
-
 
     //Check for matches
     function checkForMatch(){
@@ -106,8 +111,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         //if the cards don't match, they are flipped back over to be played again 
         else{
-            cards[optionOneId].setAttribute('src', 'assets/img/hautes-herbes-3-crop.jpg');
-            cards[optionTwoId].setAttribute('src', 'assets/img/hautes-herbes-3-crop.jpg');
+            cards[optionOneId].setAttribute('src', 'assets/img/tall-grass.jpg');
+            cards[optionTwoId].setAttribute('src', 'assets/img/tall-grass.jpg');
         }
         //Either if these two things happen, you still want to clear the chosen array and the chosenId array, the user is now ready to flip out the cards again 
         cardsChosen= []; 
@@ -118,7 +123,10 @@ document.addEventListener('DOMContentLoaded', () => {
         //If the cardsWon array deeply equals the card array (divided by two as there are 12 cards as you need to pair them to make a match)
         if (cardsWon.length === cardArray.length/2){
             //the user is alerted they won 
-            resultDisplay.textContent = "Congratulations, you caught them all !"
+            message.textContent = "Congratulations, you caught them all !"; 
+            //and the button start again is displayed
+            startAgainBtn.classList.remove('hidden'); 
+            gridContainer.classList.add('hidden'); 
         }
 
     }; 
@@ -143,12 +151,11 @@ document.addEventListener('DOMContentLoaded', () => {
             //so every time the user pick up 2 cards, it will set up the function which checks the match
             console.log('the has choosen two cards'); 
             //setTimeOut will make the checking not happen too quickly, it will call the function after 500 milliseconds
-            setTimeout(checkForMatch, 200); 
+            setTimeout(checkForMatch, 300); 
         }
 
     }; 
 
     createBoard();
     
-
 }); 
