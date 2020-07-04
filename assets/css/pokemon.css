@@ -244,7 +244,11 @@ footer{
 
     /********************************************
     ******************* HEADER ******************
-    *********************************************/    
+    *********************************************/  
+    
+    header{
+        margin-top: 20px;
+    }
 
     header div:first-of-type img{
         display                  : none;
@@ -270,11 +274,9 @@ footer{
 }
 
 /* For iPhone 5/5SE : */
-@media only screen and (min-device-width: 320px) and (max-device-width: 568px){
+/* @media only screen and (min-device-width: 320px) and (max-device-width: 568px){
 
-    /********************************************
-    ******************* HEADER ******************
-    *********************************************/ 
+   
 
     header div:first-of-type img{
        display                  : none;
@@ -288,13 +290,11 @@ footer{
         font-size                : 19px;
     }
 
-    /********************************************
-    ********************* MAIN ******************
-    *********************************************/ 
+  
 
     main h2{
         margin-top                 : 10px; 
         font-size                  : 18px;
     }
 
-}
+} */
