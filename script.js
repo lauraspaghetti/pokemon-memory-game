@@ -62,9 +62,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const startAgainBtn     = document.querySelector('button');
     
     //Arrays
-    var cardsChosen        = []; 
-    var cardsChosenId      = []; 
-    var cardsWon           = []; 
+    var cardsChosen         = []; 
+    var cardsChosenId       = []; 
+    var cardsWon            = []; 
 
     
     //You refresh the game by randomly placing the cards again on the cardboard
@@ -144,13 +144,13 @@ document.addEventListener('DOMContentLoaded', () => {
         //put those cards in a separate array to stock their id only
         cardsChosenId.push(cardId); 
         console.log(cardsChosenId); 
-        //this setAttribute let you add an image to that square based on a card id it holds as your cards are in a function
+        //this setAttribute let you add an image to that square based on a card id 
         this.setAttribute('src', cardArray[cardId].img); 
         //you only want to put 2 cards in your chosenCards array : 
         if (cardsChosen.length === 2){
             //so every time the user pick up 2 cards, it will set up the function which checks the match
             console.log('the has choosen two cards'); 
-            //setTimeOut will make the checking not happen too quickly, it will call the function after 500 milliseconds
+            //setTimeOut will make the checking not happen too quickly, it will call the function after 300 milliseconds 
             setTimeout(checkForMatch, 300); 
         }
 
