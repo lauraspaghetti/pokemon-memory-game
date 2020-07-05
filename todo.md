@@ -6,11 +6,11 @@
 ## UX  
 
 1. Add a btn start again to refresh the page once the user has won ✅  
-2. Make it responsive
+2. Make it responsive 🚀 ( -> Finish the responsiveness for the large desltop window resolution )
 
 ## Upgrading
 
-1. Create levels (at least 2) with a bigger number of cards, available when the former level is completed 🚀  
+1. Create levels (at least 2) with a bigger number of cards, available when the former level is completed  
 
 ## Style  
 
